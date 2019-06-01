@@ -33,6 +33,8 @@ public class User  implements Serializable{
 	@Column
 	private int status;
 	
+	
+	
 	public User() {
 		
 	}
@@ -52,6 +54,32 @@ public class User  implements Serializable{
 	public User(String firstName, String lastName, int age, String email, String userName, String password,
 			int status) {
 		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.email = email;
+		this.userName = userName;
+		this.password = password;
+		this.status = status;
+	}
+
+
+	
+
+	/**
+	 * @param id
+	 * @param firstName
+	 * @param lastName
+	 * @param age
+	 * @param email
+	 * @param userName
+	 * @param password
+	 * @param status
+	 */
+	public User(int id, String firstName, String lastName, int age, String email, String userName, String password,
+			int status) {
+		super();
+		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
@@ -113,11 +141,17 @@ public class User  implements Serializable{
 	public void setStatus(int status) {
 		this.status = status;
 	}
+
+
+
 	@Override
 	public String toString() {
-		return "UserObjectForm [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age
-				+ ", email=" + email + ", userName=" + userName + ", password=" + password + ", status=" + status + "]";
+		return "id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", email="
+				+ email + ", userName=" + userName + ", password=" + password + ", status=" + status;
 	}
+	
+	
+	
 
 
 
