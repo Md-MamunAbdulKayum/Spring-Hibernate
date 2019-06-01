@@ -1,9 +1,13 @@
 package com.notearena.bd.entity;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -17,8 +21,8 @@ public class Computer {
 	private String brand;
 	private double price;
 	
-	@OneToOne
-	User user;
+	@OneToMany
+	private List<User> user;
 	
 	/**
 	 * 
@@ -27,35 +31,42 @@ public class Computer {
 
 	}
 	
+
+	
+
 	/**
 	 * @param cid
 	 * @param brand
 	 * @param price
+	 * @param user
 	 */
-	public Computer(int cid, String brand, double price, User user) {
+	public Computer(int cid, String brand, double price, List<User> user) {
 		super();
 		this.cid = cid;
 		this.brand = brand;
 		this.price = price;
 		this.user = user;
 	}
-	
-	
-	
-	
+
+
+
+
+
 	/**
 	 * @param brand
 	 * @param price
+	 * @param user
 	 */
-	public Computer(String brand, double price, User user) {
+	public Computer(String brand, double price, List<User> user) {
 		super();
 		this.brand = brand;
 		this.price = price;
 		this.user = user;
 	}
-	
-	
-	
+
+
+
+
 	public int getCid() {
 		return cid;
 	}
@@ -74,14 +85,16 @@ public class Computer {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	public User getUser() {
+
+
+	public List<User> getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(List<User> user) {
 		this.user = user;
 	}
+
 
 	@Override
 	public String toString() {

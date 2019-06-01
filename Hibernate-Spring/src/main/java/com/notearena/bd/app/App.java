@@ -1,5 +1,6 @@
 package com.notearena.bd.app;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,15 @@ import com.notearena.bd.entity.User;
 import com.notearena.bd.service.ComputerService;
 import com.notearena.bd.service.UserService;
 
+
 /**
- * Hello world!
+ * 
+ * @author Mamun
  *
+ *
+ *For checking OneToMany, we need add too users -> add these two users in the list -> Add those users to the computer
  */
+
 @Component
 public class App {
 	@Autowired
@@ -26,7 +32,9 @@ public class App {
 	private ComputerService computerService;
 
 	private static ApplicationContext context;
-	User user = new User("test1", "TestLName", 29, "112@ddd.com", "tests", "pass", 1);
+	
+	User user = new User("test2", "TestLName2", 29, "112@ddd.com", "tests", "pass", 1);
+	User user1 = new User("test2", "TestLName2", 29, "112@ddd.com", "tests", "pass", 1);
 
 	public static void main(String[] args) {
 
@@ -51,6 +59,7 @@ public class App {
 	private void createUser() {
 
 		userService.addUser(user);
+		userService.addUser(user1);
 	}
 
 	private void updateUser() {
@@ -72,6 +81,12 @@ public class App {
 
 	private void createComputer() {
 
-		computerService.addComputer(new Computer("Dell", 1000.90, user));
+		User user = new User(1, "test2", "TestLName2", 29, "112@ddd.com", "tests", "pass", 1);
+		User user1 = new User(2, "test2", "TestLName2", 29, "112@ddd.com", "tests", "pass", 1);
+
+		List<User> users = new ArrayList<User>();
+		users.add(user);
+		users.add(user1);
+		computerService.addComputer(new Computer("Dell", 1000.90, users));
 	}
 }

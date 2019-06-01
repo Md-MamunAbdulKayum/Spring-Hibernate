@@ -14,32 +14,25 @@ import com.notearena.bd.entity.Computer;
 public class ComputerServiceImpl implements ComputerService {
 
 	@Autowired
-	private ComputerDAO computerDAO; 
+	private ComputerDAO computerDAO;  
 	
-	@Override
-	public void addComputer(Computer computer) {
+	public void addComputer(Computer computer) { 
 		computerDAO.addComputer(computer);
-		
 	}
 
-	@Override
-	public List<Computer> getAllComputers() {
-		// TODO Auto-generated method stub
+	public List<Computer> getAllComputers() { 
 		return computerDAO.getAllComputer();
 	}
 
-	@Override
 	public void deleteComputer(Integer computerId) {
 		computerDAO.deleteComputer(computerId);
 		
 	}
 
-	@Override
 	public Computer Computer(int computerId) {
 		return computerDAO.getComputerr(computerId);
 	}
 
-	@Override
 	public Computer updateComputer(Computer computer) {
 		return computerDAO.updateComputer(computer);
 	}

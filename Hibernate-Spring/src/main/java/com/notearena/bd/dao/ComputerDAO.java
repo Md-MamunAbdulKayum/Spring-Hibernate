@@ -6,6 +6,7 @@ import com.notearena.bd.entity.Computer;
 
 
 public interface ComputerDAO {
+	
 	public void addComputer(Computer computer);
 	
 	public List<Computer> getAllComputer();

@@ -15,20 +15,17 @@ public class ComputerDAOImpl implements ComputerDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	@Override
 	public void addComputer(Computer computer) {
 		sessionFactory.getCurrentSession().saveOrUpdate(computer);
 		
 	}
 
 	@SuppressWarnings("unchecked")
-	@Override
 	public List<Computer> getAllComputer() {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession().createQuery("from Computer").list();
 	}
 
-	@Override
 	public void deleteComputer(Integer computerId) {
 		 Computer computer = (Computer) sessionFactory.getCurrentSession().load(
 				 Computer.class, computerId);
@@ -38,13 +35,11 @@ public class ComputerDAOImpl implements ComputerDAO{
 		
 	}
 
-	@Override
 	public Computer updateComputer(Computer computer) {
 		sessionFactory.getCurrentSession().update(computer);
 		return computer;
 	}
 
-	@Override
 	public Computer getComputerr(int computerId) {
 		return (Computer) sessionFactory.getCurrentSession().get(
 				Computer.class, computerId);

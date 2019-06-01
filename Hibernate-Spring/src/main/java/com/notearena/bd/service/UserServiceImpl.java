@@ -18,13 +18,12 @@ public class UserServiceImpl implements UserService {
 	private UserDAO userDAO; 
 	
 	@Transactional
-	public void addUser(User user) {
+	public void addUser(User user) { 
 		userDAO.addUser(user);
 	}
 
 	@Transactional
 	public List<User> getAllUser() {
-		System.out.println("At getAllUser");
 		return userDAO.getAllUser();
 	}
 
@@ -35,12 +34,10 @@ public class UserServiceImpl implements UserService {
 	}
 
 	public User getUser(int userId) {
-		// TODO Auto-generated method stub
 		return userDAO.getUser(userId);
 	}
 
 	public User updateUser(User user) {
-		// TODO Auto-generated method stub
 		return userDAO.updateUser(user);
 	}
 

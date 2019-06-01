@@ -30,7 +30,7 @@ public class AppConfigurations {
     private static final String DATABASE_PASSWORD = "db.password";
     private static final String DATABASE_URL = "db.url";
     private static final String DATABASE_USERNAME = "db.username";
-    
+     
     @Bean
 	DataSource dataSource() {
 		DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
