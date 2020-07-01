@@ -13,7 +13,7 @@
 	<properties>
 		<spring.version>5.1.7.RELEASE</spring.version>
 		<hibernate.version>5.4.1.Final</hibernate.version>
-		<mysql.version>5.1.21</mysql.version>
+		<mysql.version>8.0.16</mysql.version>
 		<junit-version>4.11</junit-version>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
